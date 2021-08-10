@@ -1,8 +1,8 @@
-<app-header></app-header>
+<app-header (ChoiceManue)="OnMenueChoseing($event)"></app-header>
 <div class="container">
-  <div class="row">
-    <app-recipes></app-recipes>
-    <app-shooping-list></app-shooping-list>
+  <div class="row" >
+    <app-recipes   *ngIf="SeletedItemToshow[0]==='Recipes'"  ></app-recipes>
+    <app-shooping-list *ngIf="SeletedItemToshow[0]==='Shopping'" ></app-shooping-list>
   </div>
 </div>
 <router-outlet></router-outlet>

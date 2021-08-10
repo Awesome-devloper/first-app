@@ -1,8 +1,9 @@
 <div class="row">
     <div class="col-md-5">
-        <app-recipe-list></app-recipe-list>   
+        <app-recipe-list (DetailRecipe)="EVpobgration($event)" ></app-recipe-list>   
     </div>
     <div class="col-md-6">
-        <app-recipe-detail></app-recipe-detail>
+        <app-recipe-detail  [data_recipe]="RecipeData"
+        ></app-recipe-detail>
     </div>
 </div>

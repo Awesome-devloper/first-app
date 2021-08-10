@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component
+  , OnInit
+  , Output
+  , EventEmitter
+} from '@angular/core';
+
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -7,6 +13,7 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-list.component.css'],
 })
 export class RecipeListComponent implements OnInit {
+  @Output() DetailRecipe = new EventEmitter<Recipe>();
   recipes: Recipe[] = [
     new Recipe(
       'A Test Recipe',
@@ -14,12 +21,17 @@ export class RecipeListComponent implements OnInit {
       'https://img.taste.com.au/vhZfDaJw/taste/2017/07/lemongrass-beef-bowl-128353-1.jpg'
     ),
     new Recipe(
-      'A Test Recipe',
-      'This is Simplay Test',
-      'https://img.taste.com.au/vhZfDaJw/taste/2017/07/lemongrass-beef-bowl-128353-1.jpg'
+      'B Test Recipe',
+      'This is Simplay Test B',
+      'https://static.onecms.io/wp-content/uploads/sites/43/2020/07/22/8000900-2000.jpg'
     ),
   ];
   constructor() { }
 
   ngOnInit(): void { }
+  RecipeListClick(recipe: Recipe) {
+    this.DetailRecipe.emit( recipe);
+    
+   
+  }
 }

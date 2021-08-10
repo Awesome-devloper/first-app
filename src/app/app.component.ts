@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'first-app';
+  SeletedItemToshow: string[]=["Recipes"];
+
+  OnMenueChoseing(Choice: { selected: string[] }) {
+    console.log(Choice.selected);
+    this.SeletedItemToshow=Choice.selected;
+  }
 }

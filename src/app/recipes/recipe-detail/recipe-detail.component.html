@@ -1,20 +1,18 @@
 <div class="row">
     <div class="col-xs-12">
-        <img src="" alt="" class="img-responsive">
+        <img [src]="Rdata.imagePath" alt="{{Rdata.description}}" class="img-responsive">
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h1>Recipe Name</h1>
+        <h1>{{Rdata.name}}</h1>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
         <div class="btn-group">
-            <button type="button" 
-            class="btn btn-primary dropdown-toggle"
-            data-toggle="dropdown">
-                Mange Recipe <span class="caret"></span>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                {{Rdata.description}}<span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
                 <li><a href="#">To Shopping List</a></li>
