@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
 import { Recipe } from './recipe.model';
 
 @Component({
@@ -12,7 +12,7 @@ export class RecipesComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  EVpobgration(recipeData: Recipe) {  
+  EVpobgration(recipeData: Recipe) {
     this.RecipeData = recipeData;
   }
 }

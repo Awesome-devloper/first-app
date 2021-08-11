@@ -15,6 +15,8 @@ export class RecipeItemComponent implements OnInit {
   ngOnInit(): void {
   }
   OnclickItem(eventData: Recipe) {  
+    console.log(eventData);
+    
     this.RecipeData.emit(eventData);
   }
 }

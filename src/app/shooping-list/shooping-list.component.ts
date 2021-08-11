@@ -15,5 +15,7 @@ export class ShoopingListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  loadData(data: Ingredient) {
+    this.ingredients.push(data);
+  }
 }
