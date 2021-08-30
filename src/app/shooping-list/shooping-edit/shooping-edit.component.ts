@@ -7,6 +7,7 @@ import {
   ElementRef,
 } from '@angular/core';
 import { Ingredient } from 'src/app/shared/ingredients.model';
+import { ShoopingService } from '../shooping-list.service';
 
 @Component({
   selector: 'app-shooping-edit',
@@ -14,20 +15,23 @@ import { Ingredient } from 'src/app/shared/ingredients.model';
   styleUrls: ['./shooping-edit.component.css'],
 })
 export class ShoopingEditComponent implements OnInit {
-  @Output() sendData = new EventEmitter<Ingredient>();
+ // @Output() sendData = new EventEmitter<Ingredient>();
   @ViewChild('txtName') productName!: ElementRef;
   @ViewChild('txtAmount') productCount!: ElementRef;
 
-  constructor() { }
+  constructor(private shoopingService:ShoopingService) {
+
+   }
 
   ngOnInit(): void { }
   btnOnSave() {
-
-    this.sendData.emit(new Ingredient(
-      this.productName.nativeElement.value,
-      (this.productCount.nativeElement.value as number),
-    ));
-
-
+    this.shoopingService.showDetail.emit([new Ingredient(
+        this.productName.nativeElement.value,
+        (this.productCount.nativeElement.value as number),
+      )]);
+    // this.sendData.emit(new Ingredient(
+    //   this.productName.nativeElement.value,
+    //   (this.productCount.nativeElement.value as number),
+    // ));
   }
 }
